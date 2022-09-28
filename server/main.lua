@@ -743,6 +743,7 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
     local Player = QBCore.Functions.GetPlayer(src)
     local OtherPlayer = QBCore.Functions.GetPlayer(playerId)
     if not Player or not OtherPlayer or Player.PlayerData.job.name ~= "police" then return end
+		exports['futte-newspaper']:CreateJailStory(name, time)
 
     local currentDate = os.date("*t")
     if currentDate.day == 31 then
